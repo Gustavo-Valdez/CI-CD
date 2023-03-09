@@ -1,0 +1,18 @@
+pipeline {
+    agent any 
+
+    tools {
+        nodejs "node"
+    }
+
+    stages {
+        stage('install') {
+            steps {
+                git branch: 'main', url: 'https://github.com/Gustavo-Valdez/CI-CD'
+                dir('/var/www/') {
+                    sh 'npm install'
+                }
+            }
+        }
+    }
+}
