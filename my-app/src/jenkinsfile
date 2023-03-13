@@ -8,8 +8,10 @@ pipeline {
     stages {
         stage('install') {
             steps {
-                git branch: 'main', url: 'https://github.com/Gustavo-Valdez/CI-CD'
-                dir('/var/www/') {
+                sh 'pwd'
+                dir('/var/www/html/') {
+                    git branch: 'main', url: 'https://github.com/Gustavo-Valdez/CI-CD'
+                    sh 'pwd'
                     sh 'npm install'
                 }
             }
