@@ -5,6 +5,7 @@ pipeline {
         stage('install') {
             steps {
                 sh 'pwd'
+                sh 'whoami'
                 dir('/var/www/html') {
                     sh 'pwd'
                 }
