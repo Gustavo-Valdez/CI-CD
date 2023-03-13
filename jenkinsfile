@@ -5,7 +5,9 @@ pipeline {
         stage('install') {
             steps {
                 sh 'pwd'
-                
+                dir('/var/www/html') {
+                    sh 'pwd'
+                }
             }
         }
     }
